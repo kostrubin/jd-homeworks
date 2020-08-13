@@ -17,10 +17,10 @@ public class Main {
 
         System.out.println("До 18:");
         Stream<Person> childrenStream = persons.stream();
-        childrenStream
+        long count = childrenStream
             .filter(v -> v.getAge() < 18)
-            .map(v -> v.getName())
-            .forEach(System.out::println);
+            .count();
+        System.out.println(count);
 
         System.out.println("\nПризывники:");
         Stream<Person> soldiersStream = persons.stream();
