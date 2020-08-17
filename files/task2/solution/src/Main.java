@@ -35,8 +35,9 @@ public class Main {
         try (FileOutputStream fos = new FileOutputStream(path);
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
             oos.writeObject(currentState);
+            System.out.println("File " + path + " was saved");
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println("ERROR: " + e);
         }
     }
 
